@@ -18,17 +18,17 @@
 bool textureMode = true;
 bool lightMode = true;
 
-//êëàññ äëÿ íàñòğîéêè êàìåğû
+//ĞºĞ»Ğ°ÑÑ Ğ´Ğ»Ñ Ğ½Ğ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ¸ ĞºĞ°Ğ¼ĞµÑ€Ñ‹
 class CustomCamera : public Camera
 {
 public:
-	//äèñòàíöèÿ êàìåğû
+	//Ğ´Ğ¸ÑÑ‚Ğ°Ğ½Ñ†Ğ¸Ñ ĞºĞ°Ğ¼ĞµÑ€Ñ‹
 	double camDist;
-	//óãëû ïîâîğîòà êàìåğû
+	//ÑƒĞ³Ğ»Ñ‹ Ğ¿Ğ¾Ğ²Ğ¾Ñ€Ğ¾Ñ‚Ğ° ĞºĞ°Ğ¼ĞµÑ€Ñ‹
 	double fi1, fi2;
 
 	
-	//çíà÷íèÿ ìàñåğû ïî óìîë÷àíèş
+	//Ğ·Ğ½Ğ°Ñ‡Ğ½Ğ¸Ñ Ğ¼Ğ°ÑĞµÑ€Ñ‹ Ğ¿Ğ¾ ÑƒĞ¼Ğ¾Ğ»Ñ‡Ğ°Ğ½Ğ¸Ñ
 	CustomCamera()
 	{
 		camDist = 15;
@@ -37,10 +37,10 @@ public:
 	}
 
 	
-	//ñ÷èòàåò ïîçèöèş êàìåğû, èñõîäÿ èç óãëîâ ïîâîğîòà, âûçûâàåòñÿ äâèæêîì
+	//ÑÑ‡Ğ¸Ñ‚Ğ°ĞµÑ‚ Ğ¿Ğ¾Ğ·Ğ¸Ñ†Ğ¸Ñ ĞºĞ°Ğ¼ĞµÑ€Ñ‹, Ğ¸ÑÑ…Ğ¾Ğ´Ñ Ğ¸Ğ· ÑƒĞ³Ğ»Ğ¾Ğ² Ğ¿Ğ¾Ğ²Ğ¾Ñ€Ğ¾Ñ‚Ğ°, Ğ²Ñ‹Ğ·Ñ‹Ğ²Ğ°ĞµÑ‚ÑÑ Ğ´Ğ²Ğ¸Ğ¶ĞºĞ¾Ğ¼
 	void SetUpCamera()
 	{
-		//îòâå÷àåò çà ïîâîğîò êàìåğû ìûøêîé
+		//Ğ¾Ñ‚Ğ²ĞµÑ‡Ğ°ĞµÑ‚ Ğ·Ğ° Ğ¿Ğ¾Ğ²Ğ¾Ñ€Ğ¾Ñ‚ ĞºĞ°Ğ¼ĞµÑ€Ñ‹ Ğ¼Ñ‹ÑˆĞºĞ¾Ğ¹
 		lookPoint.setCoords(0, 0, 0);
 
 		pos.setCoords(camDist*cos(fi2)*cos(fi1),
@@ -57,27 +57,27 @@ public:
 
 	void CustomCamera::LookAt()
 	{
-		//ôóíêöèÿ íàñòğîéêè êàìåğû
+		//Ñ„ÑƒĞ½ĞºÑ†Ğ¸Ñ Ğ½Ğ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ¸ ĞºĞ°Ğ¼ĞµÑ€Ñ‹
 		gluLookAt(pos.X(), pos.Y(), pos.Z(), lookPoint.X(), lookPoint.Y(), lookPoint.Z(), normal.X(), normal.Y(), normal.Z());
 	}
 
 
 
-}  camera;   //ñîçäàåì îáúåêò êàìåğû
+}  camera;   //ÑĞ¾Ğ·Ğ´Ğ°ĞµĞ¼ Ğ¾Ğ±ÑŠĞµĞºÑ‚ ĞºĞ°Ğ¼ĞµÑ€Ñ‹
 
 
-//Êëàññ äëÿ íàñòğîéêè ñâåòà
+//ĞšĞ»Ğ°ÑÑ Ğ´Ğ»Ñ Ğ½Ğ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ¸ ÑĞ²ĞµÑ‚Ğ°
 class CustomLight : public Light
 {
 public:
 	CustomLight()
 	{
-		//íà÷àëüíàÿ ïîçèöèÿ ñâåòà
+		//Ğ½Ğ°Ñ‡Ğ°Ğ»ÑŒĞ½Ğ°Ñ Ğ¿Ğ¾Ğ·Ğ¸Ñ†Ğ¸Ñ ÑĞ²ĞµÑ‚Ğ°
 		pos = Vector3(1, 1, 3);
 	}
 
 	
-	//ğèñóåò ñôåğó è ëèíèè ïîä èñòî÷íèêîì ñâåòà, âûçûâàåòñÿ äâèæêîì
+	//Ñ€Ğ¸ÑÑƒĞµÑ‚ ÑÑ„ĞµÑ€Ñƒ Ğ¸ Ğ»Ğ¸Ğ½Ğ¸Ğ¸ Ğ¿Ğ¾Ğ´ Ğ¸ÑÑ‚Ğ¾Ñ‡Ğ½Ğ¸ĞºĞ¾Ğ¼ ÑĞ²ĞµÑ‚Ğ°, Ğ²Ñ‹Ğ·Ñ‹Ğ²Ğ°ĞµÑ‚ÑÑ Ğ´Ğ²Ğ¸Ğ¶ĞºĞ¾Ğ¼
 	void  DrawLightGhismo()
 	{
 		glDisable(GL_LIGHTING);
@@ -92,13 +92,13 @@ public:
 		if (OpenGL::isKeyPressed('G'))
 		{
 			glColor3d(0, 0, 0);
-			//ëèíèÿ îò èñòî÷íèêà ñâåòà äî îêğóæíîñòè
+			//Ğ»Ğ¸Ğ½Ğ¸Ñ Ğ¾Ñ‚ Ğ¸ÑÑ‚Ğ¾Ñ‡Ğ½Ğ¸ĞºĞ° ÑĞ²ĞµÑ‚Ğ° Ğ´Ğ¾ Ğ¾ĞºÑ€ÑƒĞ¶Ğ½Ğ¾ÑÑ‚Ğ¸
 			glBegin(GL_LINES);
 			glVertex3d(pos.X(), pos.Y(), pos.Z());
 			glVertex3d(pos.X(), pos.Y(), 0);
 			glEnd();
 
-			//ğèñóåì îêğóíîñòü
+			//Ñ€Ğ¸ÑÑƒĞµĞ¼ Ğ¾ĞºÑ€ÑƒĞ½Ğ¾ÑÑ‚ÑŒ
 			Circle c;
 			c.pos.setCoords(pos.X(), pos.Y(), 0);
 			c.scale = c.scale*1.5;
@@ -114,26 +114,26 @@ public:
 		GLfloat spec[] = { .7, .7, .7, 0 };
 		GLfloat position[] = { pos.X(), pos.Y(), pos.Z(), 1. };
 
-		// ïàğàìåòğû èñòî÷íèêà ñâåòà
+		// Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ñ‹ Ğ¸ÑÑ‚Ğ¾Ñ‡Ğ½Ğ¸ĞºĞ° ÑĞ²ĞµÑ‚Ğ°
 		glLightfv(GL_LIGHT0, GL_POSITION, position);
-		// õàğàêòåğèñòèêè èçëó÷àåìîãî ñâåòà
-		// ôîíîâîå îñâåùåíèå (ğàññåÿííûé ñâåò)
+		// Ñ…Ğ°Ñ€Ğ°ĞºÑ‚ĞµÑ€Ğ¸ÑÑ‚Ğ¸ĞºĞ¸ Ğ¸Ğ·Ğ»ÑƒÑ‡Ğ°ĞµĞ¼Ğ¾Ğ³Ğ¾ ÑĞ²ĞµÑ‚Ğ°
+		// Ñ„Ğ¾Ğ½Ğ¾Ğ²Ğ¾Ğµ Ğ¾ÑĞ²ĞµÑ‰ĞµĞ½Ğ¸Ğµ (Ñ€Ğ°ÑÑĞµÑĞ½Ğ½Ñ‹Ğ¹ ÑĞ²ĞµÑ‚)
 		glLightfv(GL_LIGHT0, GL_AMBIENT, amb);
-		// äèôôóçíàÿ ñîñòàâëÿşùàÿ ñâåòà
+		// Ğ´Ğ¸Ñ„Ñ„ÑƒĞ·Ğ½Ğ°Ñ ÑĞ¾ÑÑ‚Ğ°Ğ²Ğ»ÑÑÑ‰Ğ°Ñ ÑĞ²ĞµÑ‚Ğ°
 		glLightfv(GL_LIGHT0, GL_DIFFUSE, dif);
-		// çåğêàëüíî îòğàæàåìàÿ ñîñòàâëÿşùàÿ ñâåòà
+		// Ğ·ĞµÑ€ĞºĞ°Ğ»ÑŒĞ½Ğ¾ Ğ¾Ñ‚Ñ€Ğ°Ğ¶Ğ°ĞµĞ¼Ğ°Ñ ÑĞ¾ÑÑ‚Ğ°Ğ²Ğ»ÑÑÑ‰Ğ°Ñ ÑĞ²ĞµÑ‚Ğ°
 		glLightfv(GL_LIGHT0, GL_SPECULAR, spec);
 
 		glEnable(GL_LIGHT0);
 	}
 
 
-} light;  //ñîçäàåì èñòî÷íèê ñâåòà
+} light;  //ÑĞ¾Ğ·Ğ´Ğ°ĞµĞ¼ Ğ¸ÑÑ‚Ğ¾Ñ‡Ğ½Ğ¸Ğº ÑĞ²ĞµÑ‚Ğ°
 
 
 
 
-//ñòàğûå êîîğäèíàòû ìûøè
+//ÑÑ‚Ğ°Ñ€Ñ‹Ğµ ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñ‹ Ğ¼Ñ‹ÑˆĞ¸
 int mouseX = 0, mouseY = 0;
 
 void mouseEvent(OpenGL *ogl, int mX, int mY)
@@ -143,7 +143,7 @@ void mouseEvent(OpenGL *ogl, int mX, int mY)
 	mouseX = mX;
 	mouseY = mY;
 
-	//ìåíÿåì óãëû êàìåğû ïğè íàæàòîé ëåâîé êíîïêå ìûøè
+	//Ğ¼ĞµĞ½ÑĞµĞ¼ ÑƒĞ³Ğ»Ñ‹ ĞºĞ°Ğ¼ĞµÑ€Ñ‹ Ğ¿Ñ€Ğ¸ Ğ½Ğ°Ğ¶Ğ°Ñ‚Ğ¾Ğ¹ Ğ»ĞµĞ²Ğ¾Ğ¹ ĞºĞ½Ğ¾Ğ¿ĞºĞµ Ğ¼Ñ‹ÑˆĞ¸
 	if (OpenGL::isKeyPressed(VK_RBUTTON))
 	{
 		camera.fi1 += 0.01*dx;
@@ -151,7 +151,7 @@ void mouseEvent(OpenGL *ogl, int mX, int mY)
 	}
 
 	
-	//äâèãàåì ñâåò ïî ïëîñêîñòè, â òî÷êó ãäå ìûøü
+	//Ğ´Ğ²Ğ¸Ğ³Ğ°ĞµĞ¼ ÑĞ²ĞµÑ‚ Ğ¿Ğ¾ Ğ¿Ğ»Ğ¾ÑĞºĞ¾ÑÑ‚Ğ¸, Ğ² Ñ‚Ğ¾Ñ‡ĞºÑƒ Ğ³Ğ´Ğµ Ğ¼Ñ‹ÑˆÑŒ
 	if (OpenGL::isKeyPressed('G') && !OpenGL::isKeyPressed(VK_LBUTTON))
 	{
 		LPPOINT POINT = new tagPOINT();
@@ -231,25 +231,25 @@ void keyUpEvent(OpenGL *ogl, int key)
 
 GLuint texId;
 
-//âûïîëíÿåòñÿ ïåğåä ïåğâûì ğåíäåğîì
+//Ğ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½ÑĞµÑ‚ÑÑ Ğ¿ĞµÑ€ĞµĞ´ Ğ¿ĞµÑ€Ğ²Ñ‹Ğ¼ Ñ€ĞµĞ½Ğ´ĞµÑ€Ğ¾Ğ¼
 void initRender(OpenGL *ogl)
 {
-	//íàñòğîéêà òåêñòóğ
+	//Ğ½Ğ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ° Ñ‚ĞµĞºÑÑ‚ÑƒÑ€
 
-	//4 áàéòà íà õğàíåíèå ïèêñåëÿ
+	//4 Ğ±Ğ°Ğ¹Ñ‚Ğ° Ğ½Ğ° Ñ…Ñ€Ğ°Ğ½ĞµĞ½Ğ¸Ğµ Ğ¿Ğ¸ĞºÑĞµĞ»Ñ
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
 
-	//íàñòğîéêà ğåæèìà íàëîæåíèÿ òåêñòóğ
+	//Ğ½Ğ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ° Ñ€ĞµĞ¶Ğ¸Ğ¼Ğ° Ğ½Ğ°Ğ»Ğ¾Ğ¶ĞµĞ½Ğ¸Ñ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
-	//âêëş÷àåì òåêñòóğû
+	//Ğ²ĞºĞ»ÑÑ‡Ğ°ĞµĞ¼ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ñ‹
 	glEnable(GL_TEXTURE_2D);
 	
 
-	//ìàññèâ òğåõáàéòíûõ ıëåìåíòîâ  (R G B)
+	//Ğ¼Ğ°ÑÑĞ¸Ğ² Ñ‚Ñ€ĞµÑ…Ğ±Ğ°Ğ¹Ñ‚Ğ½Ñ‹Ñ… ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ²  (R G B)
 	RGBTRIPLE *texarray;
 
-	//ìàññèâ ñèìâîëîâ, (âûñîòà*øèğèíà*4      4, ïîòîìó÷òî   âûøå, ìû óêàçàëè èñïîëüçîâàòü ïî 4 áàéòà íà ïèêñåëü òåêñòóğû - R G B A)
+	//Ğ¼Ğ°ÑÑĞ¸Ğ² ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ğ¾Ğ², (Ğ²Ñ‹ÑĞ¾Ñ‚Ğ°*ÑˆĞ¸Ñ€Ğ¸Ğ½Ğ°*4      4, Ğ¿Ğ¾Ñ‚Ğ¾Ğ¼ÑƒÑ‡Ñ‚Ğ¾   Ğ²Ñ‹ÑˆĞµ, Ğ¼Ñ‹ ÑƒĞºĞ°Ğ·Ğ°Ğ»Ğ¸ Ğ¸ÑĞ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ÑŒ Ğ¿Ğ¾ 4 Ğ±Ğ°Ğ¹Ñ‚Ğ° Ğ½Ğ° Ğ¿Ğ¸ĞºÑĞµĞ»ÑŒ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ñ‹ - R G B A)
 	char *texCharArray;
 	int texW, texH;
 	OpenGL::LoadBMP("texture.bmp", &texW, &texH, &texarray);
@@ -257,44 +257,44 @@ void initRender(OpenGL *ogl)
 
 	
 	
-	//ãåíåğèğóåì ÈÄ äëÿ òåêñòóğû
+	//Ğ³ĞµĞ½ĞµÑ€Ğ¸Ñ€ÑƒĞµĞ¼ Ğ˜Ğ” Ğ´Ğ»Ñ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ñ‹
 	glGenTextures(1, &texId);
-	//áèíäèì àéäèøíèê, âñå ÷òî áóäåò ïğîèñõîäèòü ñ òåêñòóğîé, áóäòå ïğîèñõîäèòü ïî ıòîìó ÈÄ
+	//Ğ±Ğ¸Ğ½Ğ´Ğ¸Ğ¼ Ğ°Ğ¹Ğ´Ğ¸ÑˆĞ½Ğ¸Ğº, Ğ²ÑĞµ Ñ‡Ñ‚Ğ¾ Ğ±ÑƒĞ´ĞµÑ‚ Ğ¿Ñ€Ğ¾Ğ¸ÑÑ…Ğ¾Ğ´Ğ¸Ñ‚ÑŒ Ñ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ğ¾Ğ¹, Ğ±ÑƒĞ´Ñ‚Ğµ Ğ¿Ñ€Ğ¾Ğ¸ÑÑ…Ğ¾Ğ´Ğ¸Ñ‚ÑŒ Ğ¿Ğ¾ ÑÑ‚Ğ¾Ğ¼Ñƒ Ğ˜Ğ”
 	glBindTexture(GL_TEXTURE_2D, texId);
 
-	//çàãğóæàåì òåêñòóğó â âèäåîïÿìÿòü, â îïåğàòèâêå íàì áîëüøå  îíà íå íóæíà
+	//Ğ·Ğ°Ğ³Ñ€ÑƒĞ¶Ğ°ĞµĞ¼ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ñƒ Ğ² Ğ²Ğ¸Ğ´ĞµĞ¾Ğ¿ÑĞ¼ÑÑ‚ÑŒ, Ğ² Ğ¾Ğ¿ĞµÑ€Ğ°Ñ‚Ğ¸Ğ²ĞºĞµ Ğ½Ğ°Ğ¼ Ğ±Ğ¾Ğ»ÑŒÑˆĞµ  Ğ¾Ğ½Ğ° Ğ½Ğµ Ğ½ÑƒĞ¶Ğ½Ğ°
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, texW, texH, 0, GL_RGBA, GL_UNSIGNED_BYTE, texCharArray);
 
-	//îò÷èñòêà ïàìÿòè
+	//Ğ¾Ñ‚Ñ‡Ğ¸ÑÑ‚ĞºĞ° Ğ¿Ğ°Ğ¼ÑÑ‚Ğ¸
 	free(texCharArray);
 	free(texarray);
 
-	//íàâîäèì øìîí
+	//Ğ½Ğ°Ğ²Ğ¾Ğ´Ğ¸Ğ¼ ÑˆĞ¼Ğ¾Ğ½
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST); 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
 
-	//êàìåğó è ñâåò ïğèâÿçûâàåì ê "äâèæêó"
+	//ĞºĞ°Ğ¼ĞµÑ€Ñƒ Ğ¸ ÑĞ²ĞµÑ‚ Ğ¿Ñ€Ğ¸Ğ²ÑĞ·Ñ‹Ğ²Ğ°ĞµĞ¼ Ğº "Ğ´Ğ²Ğ¸Ğ¶ĞºÑƒ"
 	ogl->mainCamera = &camera;
 	ogl->mainLight = &light;
 
-	// íîğìàëèçàöèÿ íîğìàëåé : èõ äëèíû áóäåò ğàâíà 1
+	// Ğ½Ğ¾Ñ€Ğ¼Ğ°Ğ»Ğ¸Ğ·Ğ°Ñ†Ğ¸Ñ Ğ½Ğ¾Ñ€Ğ¼Ğ°Ğ»ĞµĞ¹ : Ğ¸Ñ… Ğ´Ğ»Ğ¸Ğ½Ñ‹ Ğ±ÑƒĞ´ĞµÑ‚ Ñ€Ğ°Ğ²Ğ½Ğ° 1
 	glEnable(GL_NORMALIZE);
 
-	// óñòğàíåíèå ñòóïåí÷àòîñòè äëÿ ëèíèé
+	// ÑƒÑÑ‚Ñ€Ğ°Ğ½ĞµĞ½Ğ¸Ğµ ÑÑ‚ÑƒĞ¿ĞµĞ½Ñ‡Ğ°Ñ‚Ğ¾ÑÑ‚Ğ¸ Ğ´Ğ»Ñ Ğ»Ğ¸Ğ½Ğ¸Ğ¹
 	glEnable(GL_LINE_SMOOTH); 
 
 
-	//   çàäàòü ïàğàìåòğû îñâåùåíèÿ
-	//  ïàğàìåòğ GL_LIGHT_MODEL_TWO_SIDE - 
-	//                0 -  ëèöåâûå è èçíàíî÷íûå ğèñóşòñÿ îäèíàêîâî(ïî óìîë÷àíèş), 
-	//                1 - ëèöåâûå è èçíàíî÷íûå îáğàáàòûâàşòñÿ ğàçíûìè ğåæèìàìè       
-	//                ñîîòâåòñòâåííî ëèöåâûì è èçíàíî÷íûì ñâîéñòâàì ìàòåğèàëîâ.    
-	//  ïàğàìåòğ GL_LIGHT_MODEL_AMBIENT - çàäàòü ôîíîâîå îñâåùåíèå, 
-	//                íå çàâèñÿùåå îò ñòî÷íèêîâ
-	// ïî óìîë÷àíèş (0.2, 0.2, 0.2, 1.0)
+	//   Ğ·Ğ°Ğ´Ğ°Ñ‚ÑŒ Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ñ‹ Ğ¾ÑĞ²ĞµÑ‰ĞµĞ½Ğ¸Ñ
+	//  Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€ GL_LIGHT_MODEL_TWO_SIDE - 
+	//                0 -  Ğ»Ğ¸Ñ†ĞµĞ²Ñ‹Ğµ Ğ¸ Ğ¸Ğ·Ğ½Ğ°Ğ½Ğ¾Ñ‡Ğ½Ñ‹Ğµ Ñ€Ğ¸ÑÑƒÑÑ‚ÑÑ Ğ¾Ğ´Ğ¸Ğ½Ğ°ĞºĞ¾Ğ²Ğ¾(Ğ¿Ğ¾ ÑƒĞ¼Ğ¾Ğ»Ñ‡Ğ°Ğ½Ğ¸Ñ), 
+	//                1 - Ğ»Ğ¸Ñ†ĞµĞ²Ñ‹Ğµ Ğ¸ Ğ¸Ğ·Ğ½Ğ°Ğ½Ğ¾Ñ‡Ğ½Ñ‹Ğµ Ğ¾Ğ±Ñ€Ğ°Ğ±Ğ°Ñ‚Ñ‹Ğ²Ğ°ÑÑ‚ÑÑ Ñ€Ğ°Ğ·Ğ½Ñ‹Ğ¼Ğ¸ Ñ€ĞµĞ¶Ğ¸Ğ¼Ğ°Ğ¼Ğ¸       
+	//                ÑĞ¾Ğ¾Ñ‚Ğ²ĞµÑ‚ÑÑ‚Ğ²ĞµĞ½Ğ½Ğ¾ Ğ»Ğ¸Ñ†ĞµĞ²Ñ‹Ğ¼ Ğ¸ Ğ¸Ğ·Ğ½Ğ°Ğ½Ğ¾Ñ‡Ğ½Ñ‹Ğ¼ ÑĞ²Ğ¾Ğ¹ÑÑ‚Ğ²Ğ°Ğ¼ Ğ¼Ğ°Ñ‚ĞµÑ€Ğ¸Ğ°Ğ»Ğ¾Ğ².    
+	//  Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€ GL_LIGHT_MODEL_AMBIENT - Ğ·Ğ°Ğ´Ğ°Ñ‚ÑŒ Ñ„Ğ¾Ğ½Ğ¾Ğ²Ğ¾Ğµ Ğ¾ÑĞ²ĞµÑ‰ĞµĞ½Ğ¸Ğµ, 
+	//                Ğ½Ğµ Ğ·Ğ°Ğ²Ğ¸ÑÑÑ‰ĞµĞµ Ğ¾Ñ‚ ÑÑ‚Ğ¾Ñ‡Ğ½Ğ¸ĞºĞ¾Ğ²
+	// Ğ¿Ğ¾ ÑƒĞ¼Ğ¾Ğ»Ñ‡Ğ°Ğ½Ğ¸Ñ (0.2, 0.2, 0.2, 1.0)
 
 	glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, 0);
 
@@ -302,8 +302,19 @@ void initRender(OpenGL *ogl)
 	camera.fi2 = 0.8;
 }
 
-
-
+double ir = 0;
+double jr = 0;
+double kr = 0;
+void computing(double A[], double B[], double C[]) {
+	double sum = 0;
+	ir = (B[1] - A[1]) * (C[2] - A[2]) - (C[1] - A[1]) * (B[2] - A[2]);//ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñ‹ Ğ½Ğ¾Ñ€Ğ¼Ğ°Ğ»ÑŒĞ½Ğ¾Ğ³Ğ¾ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ°
+	jr = -((B[0] - A[0]) * (C[2] - A[2]) - (B[2] - A[2]) * (C[0] - A[0]));
+	kr = (B[0] - A[0]) * (C[1] - A[1]) - (B[1] - A[1]) * (C[0] - A[0]);
+	sum = sqrt(ir * ir + jr * jr + kr * kr);
+	ir /= sum;
+	jr /= sum;
+	kr /= sum;
+}
 
 
 void Render(OpenGL *ogl)
@@ -322,34 +333,35 @@ void Render(OpenGL *ogl)
 		glEnable(GL_LIGHTING);
 
 
-	//àëüôàíàëîæåíèå
+	//Ğ°Ğ»ÑŒÑ„Ğ°Ğ½Ğ°Ğ»Ğ¾Ğ¶ĞµĞ½Ğ¸Ğµ
 	//glEnable(GL_BLEND);
 	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
-	//íàñòğîéêà ìàòåğèàëà
+	//Ğ½Ğ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ° Ğ¼Ğ°Ñ‚ĞµÑ€Ğ¸Ğ°Ğ»Ğ°
 	GLfloat amb[] = { 0.2, 0.2, 0.1, 1. };
 	GLfloat dif[] = { 0.4, 0.65, 0.5, 1. };
 	GLfloat spec[] = { 0.9, 0.8, 0.3, 1. };
 	GLfloat sh = 0.1f * 256;
 
 
-	//ôîíîâàÿ
+	//Ñ„Ğ¾Ğ½Ğ¾Ğ²Ğ°Ñ
 	glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
-	//äèôóçíàÿ
+	//Ğ´Ğ¸Ñ„ÑƒĞ·Ğ½Ğ°Ñ
 	glMaterialfv(GL_FRONT, GL_DIFFUSE, dif);
-	//çåğêàëüíàÿ
+	//Ğ·ĞµÑ€ĞºĞ°Ğ»ÑŒĞ½Ğ°Ñ
 	glMaterialfv(GL_FRONT, GL_SPECULAR, spec); \
-		//ğàçìåğ áëèêà
+		//Ñ€Ğ°Ğ·Ğ¼ĞµÑ€ Ğ±Ğ»Ğ¸ĞºĞ°
 		glMaterialf(GL_FRONT, GL_SHININESS, sh);
 
-	//÷òîá áûëî êğàñèâî, áåç êâàäğàòèêîâ (ñãëàæèâàíèå îñâåùåíèÿ)
+	//Ñ‡Ñ‚Ğ¾Ğ± Ğ±Ñ‹Ğ»Ğ¾ ĞºÑ€Ğ°ÑĞ¸Ğ²Ğ¾, Ğ±ĞµĞ· ĞºĞ²Ğ°Ğ´Ñ€Ğ°Ñ‚Ğ¸ĞºĞ¾Ğ² (ÑĞ³Ğ»Ğ°Ğ¶Ğ¸Ğ²Ğ°Ğ½Ğ¸Ğµ Ğ¾ÑĞ²ĞµÑ‰ĞµĞ½Ğ¸Ñ)
 	glShadeModel(GL_SMOOTH);
 	//===================================
-	//Ïğîãàòü òóò  
+	//ĞŸÑ€Ğ¾Ğ³Ğ°Ñ‚ÑŒ Ñ‚ÑƒÑ‚  
 
-
-	//Íà÷àëî ğèñîâàíèÿ êâàäğàòèêà ñòàíêèíà
+	
+	//ĞĞ°Ñ‡Ğ°Ğ»Ğ¾ Ñ€Ğ¸ÑĞ¾Ğ²Ğ°Ğ½Ğ¸Ñ ĞºĞ²Ğ°Ğ´Ñ€Ğ°Ñ‚Ğ¸ĞºĞ° ÑÑ‚Ğ°Ğ½ĞºĞ¸Ğ½Ğ°
+	/*
 	double A[2] = { -4, -4 };
 	double B[2] = { 4, -4 };
 	double C[2] = { 4, 4 };
@@ -371,45 +383,252 @@ void Render(OpenGL *ogl)
 	glVertex2dv(D);
 
 	glEnd();
-	//êîíåö ğèñîâàíèÿ êâàäğàòèêà ñòàíêèíà
+
+	*/
 
 
-   //Ñîîáùåíèå ââåğõó ıêğàíà
+	glBegin(GL_TRIANGLES);
+	glNormal3d(0, 0, -1);
+	double A[] = { 0, 0, 0 };
+	double B[] = { 2, 7, 0 };
+	double C[] = { 5, 3, 0 };
+	
+	glVertex3dv(A);
+	glVertex3dv(B);
+	glVertex3dv(C);
+
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	double A1[] = { 5, 3, 0 };
+	double B1[] = { 4, 10, 0 };
+	double C1[] = { 9, 5, 0 };
+
+	glVertex3dv(A1);
+	glVertex3dv(B1);
+	glVertex3dv(C1);
+
+	double A2[] = { 9, 5, 0 };
+	double B2[] = { 11, 10, 0 };
+	double C2[] = { 15, 5, 0 };
+
+	glVertex3dv(A2);
+	glVertex3dv(B2);
+	glVertex3dv(C2);
+
+	double A3[] = { 0, 0, 0 };
+	double B3[] = { 5, 3, 0 };
+	double C3[] = { 15, 5, 0 };
+
+	glVertex3dv(A3);
+	glVertex3dv(B3);
+	glVertex3dv(C3);
+
+	double A4[] = { 5, 3, 0 };
+	double B4[] = { 9, 5, 0 };
+	double C4[] = { 15, 5, 0 };
+
+	glVertex3dv(A4);
+	glVertex3dv(B4);
+	glVertex3dv(C4);
+
+
+
+
+
+
+	//bottom
+	glNormal3d(0, 0, 1);
+	double A01[] = { 0, 0, 2 };
+	double B01[] = { 2, 7, 2 };
+	double C01[] = { 5, 3, 2 };
+
+	glVertex3dv(A01);
+	glVertex3dv(B01);
+	glVertex3dv(C01);
+
+	double A11[] = { 5, 3, 2 };
+	double B11[] = { 4, 10, 2 };
+	double C11[] = { 9, 5, 2 };
+
+	glVertex3dv(A11);
+	glVertex3dv(B11);
+	glVertex3dv(C11);
+
+	double A21[] = { 9, 5, 2 };
+	double B21[] = { 11, 10, 2 };
+	double C21[] = { 15, 5, 2 };
+
+	glVertex3dv(A21);
+	glVertex3dv(B21);
+	glVertex3dv(C21);
+
+	double A31[] = { 0, 0, 2 };
+	double B31[] = { 5, 3, 2 };
+	double C31[] = { 15, 5, 2 };
+
+	glVertex3dv(A31);
+	glVertex3dv(B31);
+	glVertex3dv(C31);
+
+	double A41[] = { 5, 3, 2 };
+	double B41[] = { 9, 5, 2 };
+	double C41[] = { 15, 5, 2 };
+
+	glVertex3dv(A41);
+	glVertex3dv(B41);
+	glVertex3dv(C41);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+
+	glColor3d(0.2, 0.7, 0.7);
+
+	double D[] = { 0, 0, 0 };
+	double E[] = { 15, 5, 0 };
+	double F[] = { 15, 5, 2 };
+	double G[] = { 0, 0, 2 };
+
+	computing(D, E, G);
+	glNormal3d(ir, jr, kr);
+
+
+	glVertex3dv(D);
+	glVertex3dv(E);
+	glVertex3dv(F);
+	glVertex3dv(G);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+	double D1[] = { 15, 5, 0 };
+	double E1[] = { 11, 10, 0 };
+	double F1[] = { 11, 10, 2 };
+	double G1[] = { 15, 5, 2 };
+	computing(D1, E1, G1);
+	glNormal3d(ir, jr, kr);
+
+	glVertex3dv(D1);
+	glVertex3dv(E1);
+	glVertex3dv(F1);
+	glVertex3dv(G1);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+
+	double D2[] = { 11, 10, 0 };
+	double E2[] = { 9, 5, 0 };
+	double F2[] = { 9, 5, 2 };
+	double G2[] = { 11, 10, 2 };
+	computing(D2, E2, G2);
+	glNormal3d(ir, jr, kr);
+
+	glVertex3dv(D2);
+	glVertex3dv(E2);
+	glVertex3dv(F2);
+	glVertex3dv(G2);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	double D3[] = { 9, 5, 0 };
+	double E3[] = { 4, 10, 0 };
+	double F3[] = { 4, 10, 2 };
+	double G3[] = { 9, 5, 2 };
+	computing(D3, E3, G3);
+	glNormal3d(ir, jr, kr);
+
+	glVertex3dv(D3);
+	glVertex3dv(E3);
+	glVertex3dv(F3);
+	glVertex3dv(G3);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+	double D4[] = { 4, 10, 0 };
+	double E4[] = { 5, 3, 0 };
+	double F4[] = { 5, 3, 2 };
+	double G4[] = { 4, 10, 2 };
+	computing(D4, E4, G4);
+	glNormal3d(ir, jr, kr);
+
+	glVertex3dv(D4);
+	glVertex3dv(E4);
+	glVertex3dv(F4);
+	glVertex3dv(G4);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+	double D5[] = { 5, 3, 0 };
+	double E5[] = { 2, 7, 0 };
+	double F5[] = { 2, 7, 2 };
+	double G5[] = { 5, 3, 2 };
+	computing(D5, E5, G5);
+	glNormal3d(ir, jr, kr);
+
+	glVertex3dv(D5);
+	glVertex3dv(E5);
+	glVertex3dv(F5);
+	glVertex3dv(G5);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+	double D6[] = { 2, 7, 0 };
+	double E6[] = { 0, 0, 0 };
+	double F6[] = { 0, 0, 2 };
+	double G6[] = { 2, 7, 2 };
+	computing(D6, E6, G6);
+	glNormal3d(ir, jr, kr);
+
+	glVertex3dv(D6);
+	glVertex3dv(E6);
+	glVertex3dv(F6);
+	glVertex3dv(G6);
+
+	glEnd();
+	//ĞºĞ¾Ğ½ĞµÑ† Ñ€Ğ¸ÑĞ¾Ğ²Ğ°Ğ½Ğ¸Ñ ĞºĞ²Ğ°Ğ´Ñ€Ğ°Ñ‚Ğ¸ĞºĞ° ÑÑ‚Ğ°Ğ½ĞºĞ¸Ğ½Ğ°
+
+
+   //Ğ¡Ğ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ğµ Ğ²Ğ²ĞµÑ€Ñ…Ñƒ ÑĞºÑ€Ğ°Ğ½Ğ°
 
 	
-	glMatrixMode(GL_PROJECTION);	//Äåëàåì àêòèâíîé ìàòğèöó ïğîåêöèé. 
-	                                //(âñåê ìàòğè÷íûå îïåğàöèè, áóäóò åå âèäîèçìåíÿòü.)
-	glPushMatrix();   //ñîõğàíÿåì òåêóùóş ìàòğèöó ïğîåöèğîâàíèÿ (êîòîğàÿ îïèñûâàåò ïåğñïåêòèâíóş ïğîåêöèş) â ñòåê 				    
-	glLoadIdentity();	  //Çàãğóæàåì åäèíè÷íóş ìàòğèöó
-	glOrtho(0, ogl->getWidth(), 0, ogl->getHeight(), 0, 1);	 //âğóáàåì ğåæèì îğòîãîíàëüíîé ïğîåêöèè
+	glMatrixMode(GL_PROJECTION);	//Ğ”ĞµĞ»Ğ°ĞµĞ¼ Ğ°ĞºÑ‚Ğ¸Ğ²Ğ½Ğ¾Ğ¹ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñƒ Ğ¿Ñ€Ğ¾ĞµĞºÑ†Ğ¸Ğ¹. 
+	                                //(Ğ²ÑĞµĞº Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ‡Ğ½Ñ‹Ğµ Ğ¾Ğ¿ĞµÑ€Ğ°Ñ†Ğ¸Ğ¸, Ğ±ÑƒĞ´ÑƒÑ‚ ĞµĞµ Ğ²Ğ¸Ğ´Ğ¾Ğ¸Ğ·Ğ¼ĞµĞ½ÑÑ‚ÑŒ.)
+	glPushMatrix();   //ÑĞ¾Ñ…Ñ€Ğ°Ğ½ÑĞµĞ¼ Ñ‚ĞµĞºÑƒÑ‰ÑƒÑ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñƒ Ğ¿Ñ€Ğ¾ĞµÑ†Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ (ĞºĞ¾Ñ‚Ğ¾Ñ€Ğ°Ñ Ğ¾Ğ¿Ğ¸ÑÑ‹Ğ²Ğ°ĞµÑ‚ Ğ¿ĞµÑ€ÑĞ¿ĞµĞºÑ‚Ğ¸Ğ²Ğ½ÑƒÑ Ğ¿Ñ€Ğ¾ĞµĞºÑ†Ğ¸Ñ) Ğ² ÑÑ‚ĞµĞº 				    
+	glLoadIdentity();	  //Ğ—Ğ°Ğ³Ñ€ÑƒĞ¶Ğ°ĞµĞ¼ ĞµĞ´Ğ¸Ğ½Ğ¸Ñ‡Ğ½ÑƒÑ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñƒ
+	glOrtho(0, ogl->getWidth(), 0, ogl->getHeight(), 0, 1);	 //Ğ²Ñ€ÑƒĞ±Ğ°ĞµĞ¼ Ñ€ĞµĞ¶Ğ¸Ğ¼ Ğ¾Ñ€Ñ‚Ğ¾Ğ³Ğ¾Ğ½Ğ°Ğ»ÑŒĞ½Ğ¾Ğ¹ Ğ¿Ñ€Ğ¾ĞµĞºÑ†Ğ¸Ğ¸
 
-	glMatrixMode(GL_MODELVIEW);		//ïåğåêëş÷àåìñÿ íà ìîäåë-âüş ìàòğèöó
-	glPushMatrix();			  //ñîõğàíÿåì òåêóùóş ìàòğèöó â ñòåê (ïîëîæåíèå êàìåğû, ôàêòè÷åñêè)
-	glLoadIdentity();		  //ñáğàñûâàåì åå â äåôîëò
+	glMatrixMode(GL_MODELVIEW);		//Ğ¿ĞµÑ€ĞµĞºĞ»ÑÑ‡Ğ°ĞµĞ¼ÑÑ Ğ½Ğ° Ğ¼Ğ¾Ğ´ĞµĞ»-Ğ²ÑŒÑ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñƒ
+	glPushMatrix();			  //ÑĞ¾Ñ…Ñ€Ğ°Ğ½ÑĞµĞ¼ Ñ‚ĞµĞºÑƒÑ‰ÑƒÑ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñƒ Ğ² ÑÑ‚ĞµĞº (Ğ¿Ğ¾Ğ»Ğ¾Ğ¶ĞµĞ½Ğ¸Ğµ ĞºĞ°Ğ¼ĞµÑ€Ñ‹, Ñ„Ğ°ĞºÑ‚Ğ¸Ñ‡ĞµÑĞºĞ¸)
+	glLoadIdentity();		  //ÑĞ±Ñ€Ğ°ÑÑ‹Ğ²Ğ°ĞµĞ¼ ĞµĞµ Ğ² Ğ´ĞµÑ„Ğ¾Ğ»Ñ‚
 
 	glDisable(GL_LIGHTING);
 
 
 
-	GuiTextRectangle rec;		   //êëàññèê ìîåãî àâòîğñòâà äëÿ óäîáíîé ğàáîòû ñ ğåíäåğîì òåêñòà.
+	GuiTextRectangle rec;		   //ĞºĞ»Ğ°ÑÑĞ¸Ğº Ğ¼Ğ¾ĞµĞ³Ğ¾ Ğ°Ğ²Ñ‚Ğ¾Ñ€ÑÑ‚Ğ²Ğ° Ğ´Ğ»Ñ ÑƒĞ´Ğ¾Ğ±Ğ½Ğ¾Ğ¹ Ñ€Ğ°Ğ±Ğ¾Ñ‚Ñ‹ Ñ Ñ€ĞµĞ½Ğ´ĞµÑ€Ğ¾Ğ¼ Ñ‚ĞµĞºÑÑ‚Ğ°.
 	rec.setSize(300, 150);
 	rec.setPosition(10, ogl->getHeight() - 150 - 10);
 
 
 	std::stringstream ss;
-	ss << "T - âêë/âûêë òåêñòóğ" << std::endl;
-	ss << "L - âêë/âûêë îñâåùåíèå" << std::endl;
-	ss << "F - Ñâåò èç êàìåğû" << std::endl;
-	ss << "G - äâèãàòü ñâåò ïî ãîğèçîíòàëè" << std::endl;
-	ss << "G+ËÊÌ äâèãàòü ñâåò ïî âåğòåêàëè" << std::endl;
-	ss << "Êîîğä. ñâåòà: (" << light.pos.X() << ", " << light.pos.Y() << ", " << light.pos.Z() << ")" << std::endl;
-	ss << "Êîîğä. êàìåğû: (" << camera.pos.X() << ", " << camera.pos.Y() << ", " << camera.pos.Z() << ")" << std::endl;
-	ss << "Ïàğàìåòğû êàìåğû: R="  << camera.camDist << ", fi1=" << camera.fi1 << ", fi2=" << camera.fi2 << std::endl;
+	ss << "T - Ğ²ĞºĞ»/Ğ²Ñ‹ĞºĞ» Ñ‚ĞµĞºÑÑ‚ÑƒÑ€" << std::endl;
+	ss << "L - Ğ²ĞºĞ»/Ğ²Ñ‹ĞºĞ» Ğ¾ÑĞ²ĞµÑ‰ĞµĞ½Ğ¸Ğµ" << std::endl;
+	ss << "F - Ğ¡Ğ²ĞµÑ‚ Ğ¸Ğ· ĞºĞ°Ğ¼ĞµÑ€Ñ‹" << std::endl;
+	ss << "G - Ğ´Ğ²Ğ¸Ğ³Ğ°Ñ‚ÑŒ ÑĞ²ĞµÑ‚ Ğ¿Ğ¾ Ğ³Ğ¾Ñ€Ğ¸Ğ·Ğ¾Ğ½Ñ‚Ğ°Ğ»Ğ¸" << std::endl;
+	ss << "G+Ğ›ĞšĞœ Ğ´Ğ²Ğ¸Ğ³Ğ°Ñ‚ÑŒ ÑĞ²ĞµÑ‚ Ğ¿Ğ¾ Ğ²ĞµÑ€Ñ‚ĞµĞºĞ°Ğ»Ğ¸" << std::endl;
+	ss << "ĞšĞ¾Ğ¾Ñ€Ğ´. ÑĞ²ĞµÑ‚Ğ°: (" << light.pos.X() << ", " << light.pos.Y() << ", " << light.pos.Z() << ")" << std::endl;
+	ss << "ĞšĞ¾Ğ¾Ñ€Ğ´. ĞºĞ°Ğ¼ĞµÑ€Ñ‹: (" << camera.pos.X() << ", " << camera.pos.Y() << ", " << camera.pos.Z() << ")" << std::endl;
+	ss << "ĞŸĞ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ñ‹ ĞºĞ°Ğ¼ĞµÑ€Ñ‹: R="  << camera.camDist << ", fi1=" << camera.fi1 << ", fi2=" << camera.fi2 << std::endl;
 	
 	rec.setText(ss.str().c_str());
 	rec.Draw();
 
-	glMatrixMode(GL_PROJECTION);	  //âîññòàíàâëèâàåì ìàòğèöû ïğîåêöèè è ìîäåë-âüş îáğàòüíî èç ñòåêà.
+	glMatrixMode(GL_PROJECTION);	  //Ğ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ°Ğ²Ğ»Ğ¸Ğ²Ğ°ĞµĞ¼ Ğ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñ‹ Ğ¿Ñ€Ğ¾ĞµĞºÑ†Ğ¸Ğ¸ Ğ¸ Ğ¼Ğ¾Ğ´ĞµĞ»-Ğ²ÑŒÑ Ğ¾Ğ±Ñ€Ğ°Ñ‚ÑŒĞ½Ğ¾ Ğ¸Ğ· ÑÑ‚ĞµĞºĞ°.
 	glPopMatrix();
 
 
